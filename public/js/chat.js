@@ -48,7 +48,7 @@ socket.on('updateUserList', function (users) {
 
 
 socket.on('newMessage', function (message) {
-  var formattedTime = moment(message.createdAt).format('h:mm a');
+  var formattedTime = moment(message.createdAt).format('H:mm');
   var template = jQuery('#message-template').html();
   var html = Mustache.to_html(template, {
     text: message.text,
