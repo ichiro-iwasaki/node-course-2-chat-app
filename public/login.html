@@ -1,39 +1,38 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>イワチャット</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>イワチャット｜ログイン</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body class="centered-form">
   <div class="centered-form__form">
-    <form action="/chat.html">
+    <form action="/users/login">
       <div class="form-field">
-        <h3>イワチャット<h3>
+        <h3>ログインでっせ〜!!!<h3>
       </div>
       <div class="form-field">
         <label>名前</label>
         <input type="text" name="name" autofocus/>
       </div>
       <div class="form-field">
-        <label>チャットルーム</label>
-        <input type="text" name="room"/>
+        <label>パスワード</label>
+        <input type="text" name="password"/>
       </div>
       <div class="form-field">
-        <button>参加する</button>
+        <button id='#btnLogin'>ログイン</button>
       </div>
     </form>
   </div>
-  <div id='user-infomation'>
-  </div>
+
 </body>
 
-  <script src="/socket.io/socket.io.js"></script>
+<!--   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.3.1.min.js"></script>
   <script src="/js/libs/deparam.js"></script>
-  <script src="/js/index.js"></script>
+  <script src="/js/login.js"></script> -->
 
 </html>
