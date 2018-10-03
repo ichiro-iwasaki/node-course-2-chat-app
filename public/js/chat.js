@@ -63,7 +63,7 @@ socket.on('newMessage', function (message) {
 socket.on('newLocationMessage', function (message) {
   var formattedTime = moment(message.createdAt).format('h:mm a');
   var template = jQuery('#location-message-template').html();
-  var html = Mustache.render(template, {
+  var html = Mustache.to_html(template, {
     from: message.from,
     url: message.url,
     createdAt: formattedTime
@@ -93,10 +93,10 @@ locationButton.on('click', function () {
     return alert('Geolocation not supported by your browser.');
   }
 
-  locationButton.attr('disabled', 'disabled').text('Sending location...');
+  locationButton.attr('disabled', 'disabled').text('送信中...');
 
   navigator.geolocation.getCurrentPosition(function (position) {
-    locationButton.removeAttr('disabled').text('Send location');
+    locationButton.removeAttr('disabled').text('位置情報を送信');
     socket.emit('createLocationMessage', {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
